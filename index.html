@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artisans d'idées - Mardi8</title>
+
+    <link href="/style.css" />
+
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script src="https://pixijs.download/release/pixi.min.js"></script> -->
+  </head>
+  <body>
+    <navbar class="sticky top-0 left-0 w-full py-6 px-7 min-h-20 flex flex-row justify-between z-2">
+      <div class="flex flex-row flex-nowrap gap-2">
+        <div class="uppercase text-size-[var(--font-size)] opacity-40 leading-4 tracking-4px">
+          <span class="flex flex-col flex-nowrap">
+            <span>Artisans</span>
+            <span>d'idées</span>
+          </span>
+        </div>
+        <svg width="10" height="30">
+          <line x1="5" y1="0" x2="0" y2="30" class="fill-light-50" stroke="white">
+            <!-- style="transform: scaleY(-1); stroke-dasharray: 14; stroke-dashoffset: 14" -->
+          </line>
+        </svg>
+        <div class="uppercase text-size-[var(--font-size)] leading-4 tracking-4px">Mardi8</div>
+      </div>
+      <div class="flex flex-row flex-nowrap items-start cursor-pointer">
+        <span class="mr-4 align-top leading-3">
+          <span class="menu">m</span>
+          <span class="menu">e</span>
+          <span class="menu">n</span>
+          <span class="menu">u</span>
+        </span>
+        <svg width="10" height="15" class="opacity-40">
+          <line x1="5" y1="0" x2="5" y2="14" class="fill-light-50" stroke="var(--gray)">
+            <!-- style="transform: scaleY(-1); stroke-dasharray: 14; stroke-dashoffset: 14" -->
+          </line>
+        </svg>
+        <span> </span>
+      </div>
+    </navbar>
+
+    <header class="relative w-full h-screen mt-50 flex flex-col items-center gap-1">
+      <div class="relative w-308px h-270px mx-auto">
+        <svg
+          style="opacity: 0; transform: translateY(-100%)"
+          class="rect-top absolute"
+          width="308"
+          height="270"
+          viewBox="0 0 308 270"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="87.2666"
+            y="67.375"
+            width="95.2826"
+            height="95.2826"
+            transform="rotate(-45 87.2666 67.375)"
+            fill="white"
+          />
+        </svg>
+
+        <svg
+          style="opacity: 0; transform: translateY(100%) scale(0.1)"
+          class="rect-bottom absolute"
+          width="308"
+          height="270"
+          viewBox="0 0 308 270"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="87.2666"
+            y="202.125"
+            width="95.2826"
+            height="95.2826"
+            transform="rotate(-45 87.2666 202.125)"
+            fill="white"
+          />
+        </svg>
+        <svg
+          style="opacity: 0; transform: translate(-100%, -50%) rotate(90deg)"
+          class="rect-left absolute"
+          width="308"
+          height="270"
+          viewBox="0 0 308 270"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="87" height="269" fill="white" />
+        </svg>
+        <svg
+          style="opacity: 0; transform: translate(100%, 50%) rotate(90deg)"
+          class="rect-right absolute"
+          width="308"
+          height="270"
+          viewBox="0 0 308 270"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect class="rect-right" x="221" width="87" height="269" fill="white" />
+        </svg>
+      </div>
+      <h1 class="brand text-9xl font-thin opacity-0">Mardi8</h1>
+      <h2 class="brand-sub s_h3 opacity-0">Producteur d’expériences numériques</h2>
+    </header>
+
+    <main class="container mx-auto px-4 lg:max-w-1024px">
+      <section>
+        <h2 class="sr-only">A propos</h2>
+        <div>
+          <!-- <img class="float-left min-w-220px p-5 pb-0" alt="mardi8" src="/public/mardi8.svg" width="40" height="60" /> -->
+          <p class="s_h1 font-thin">
+            Service de postproduction basé à Marseille, spécialisé dans le montage, l’étalonnage, le motion design et le
+            laboratoire numérique.
+          </p>
+        </div>
+        <!-- <div class="flex flex-row justify-end ml-100 mt-30"> -->
+        <div class="flex flex-row justify-end w-full mt-30">
+          <p class="max-w-100 text-justify">
+            Depuis 2018, nous supervisons la postproduction de films publicitaires, d’animations, de documentaires et
+            d’installations numériques. Reconnue internationalement pour notre travail dans le cadre de la muséographie
+            et des grandes projections immersives, nous effectuons aussi des prestations de postproduction à destination
+            des sociétés de production de la région Sud et d’ailleurs.
+          </p>
+        </div>
+      </section>
+
+      <section class="w-full relative">
+        <video
+          id="video-blur"
+          class="s_centered overflow-x-hidden z-0 filter blur-[100px] opacity-38 transition-opacity duration-50 ease-linear"
+          src="/mardi8_test.mp4"
+          width="100%"
+          height="auto"
+          muted
+        ></video>
+        <video
+          id="video-origin"
+          class="relative z-1"
+          src="/mardi8_test.mp4"
+          width="100%"
+          height="auto"
+          controls
+        ></video>
+      </section>
+
+      <section class="flex flex-row justify-center lg:justify-between flex-wrap">
+        <div class="mb-25 lg:w-[30%] lg:mb-0 w-[60%] text-center">
+          <h3 class="s_h3 uppercase">presta</h3>
+          <p class="s_sub">prestations</p>
+
+          <ul class="mt-10">
+            <li>Montage image et son</li>
+            <li>Etalonnage 2K et 4K</li>
+            <li>Motion design</li>
+            <li>Animation 2D / 3D</li>
+            <li>Effets Visuels</li>
+            <li>Laboratoire numérique PAD / DCP</li>
+            <li>Mixage TV</li>
+          </ul>
+        </div>
+        <div class="mb-25 lg:w-[30%] lg:mb-0 w-[60%] text-center">
+          <h3 class="s_h3 uppercase">Tournages</h3>
+          <p class="s_sub">services aux tournages</p>
+          <ul class="mt-10">
+            <li>Back-up sur serveur sécurisé en RAID5</li>
+            <li>Synchronisation et vérification des rushes</li>
+            <li>Transcode des rushes en proxies / daylies</li>
+            <li>Station de travail 4K</li>
+          </ul>
+        </div>
+        <div class="mb-25 lg:w-[30%] lg:mb-0 w-[60%] text-center">
+          <h3 class="s_h3 uppercase">Tools</h3>
+          <p class="s_sub">outils de productions</p>
+          <ul class="mt-10">
+            <li>Adobe Premiere</li>
+            <li>Adobe After-Effects</li>
+            <li>Unreal Engine</li>
+            <li>me donner</li>
+            <li>les noms</li>
+            <li>des autres</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="w-full text-center">
+        <h3 class="sr-only">contact</h3>
+        <p class="s_h1 font-thin">contact@mardi8.com</p>
+      </section>
+    </main>
+
+    <footer class="bg-dark-700 w-full flex flex-row justify-between items-start p-4">footer</footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
