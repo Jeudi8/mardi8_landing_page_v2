@@ -1,6 +1,7 @@
 # Mardi8
 
-Landing page for the company Mardi8
+Landing page for the company Mardi8.  
+Preview : https://mardi8-bd272.web.app/
 
 ## Project Setup
 
