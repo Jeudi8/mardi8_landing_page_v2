@@ -1,5 +1,5 @@
 const selector = (selector: string, events?: { [key in keyof ElementEventMap as string]: (e: Event) => void }) => {
-  const els = document.querySelectorAll(selector);
+  const els = document.querySelectorAll<HTMLElement>(selector);
 
   if (events) {
     els.forEach((el) => {
