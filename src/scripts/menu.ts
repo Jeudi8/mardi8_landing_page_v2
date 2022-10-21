@@ -1,4 +1,4 @@
-import gsap, { Power4 } from 'gsap';
+import gsap from 'gsap';
 
 import selector from './selector';
 
@@ -24,10 +24,25 @@ const hide = () => {
 const tl = gsap
   .timeline({
     paused: true,
-    defaults: { opacity: 1, ease: Power4.easeOut },
+    defaults: { duration: 1, ease: 'linear' },
   })
-  .to(MENU, { duration: 2 })
-  .to(MENU_LINK, { duration: 1, stagger: 0.1, ease: 'linear' }, '<50%');
+  .to(MENU, {
+    opacity: 1,
+  })
+  .to(
+    MENU_LINK,
+    {
+      opacity: 0.7,
+      stagger: 0.1,
+      onComplete: function () {
+        this.targets().forEach((el: HTMLLinkElement) => {
+          el.style.opacity = '';
+          el.classList.add('opacity-50');
+        });
+      },
+    },
+    '<50%'
+  );
 
 tl.eventCallback('onReverseComplete', hide);
 tl.eventCallback('onStart', show);

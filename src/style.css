@@ -85,6 +85,13 @@ section {
   opacity: 1;
 }
 
+.menu-link {
+  transition: opacity 0.5s;
+}
+.menu-link:hover {
+  opacity: 1;
+}
+
 ::-webkit-scrollbar {
   position: fixed;
   width: 5px;
