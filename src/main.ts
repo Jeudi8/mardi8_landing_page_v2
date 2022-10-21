@@ -6,6 +6,7 @@ import * as header from './scripts/header';
 import * as menu from './scripts/menu';
 
 header.attach('.brand');
-menu.attach('#menu-btn');
+menu.attach('.menu-toggler');
+menu.attach('.menu-link');
 video.attach('#video-origin');
 sections.attach('section');

@@ -1,7 +1,9 @@
 import selector from './selector';
 
 const click = () => {
-  const menu = selector('#menu')[0];
+  console.log('enter');
+
+  const menu = selector('#menu')[0] as HTMLElement;
   if (!menu) return;
 
   const hidden = menu.className.match(/hidden/);
@@ -15,9 +17,6 @@ const click = () => {
   }
 };
 
-export const attach = (id: string) => {
-  const btn = selector(id, { click })[0];
-  if (!btn) return;
+export const attach = (str: string) => {
+  selector(str, { click });
 };
-
-export default {};

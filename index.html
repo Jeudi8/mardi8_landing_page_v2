@@ -21,9 +21,9 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500&display=swap"
       rel="stylesheet"
     />
-    <!-- <script src="https://pixijs.download/release/pixi.min.js"></script> -->
   </head>
   <body>
+    <!-- NAVBAR -->
     <navbar class="sticky top-0 left-0 w-full py-6 px-7 min-h-20 flex flex-row justify-between z-20">
       <div class="flex flex-row flex-nowrap gap-2">
         <div class="uppercase text-size-[var(--font-size)] opacity-40 leading-4 tracking-4px">
@@ -39,7 +39,7 @@
         </svg>
         <div class="uppercase text-size-[var(--font-size)] leading-4 tracking-4px">Mardi8</div>
       </div>
-      <button id="menu-btn" class="flex flex-row flex-nowrap items-start cursor-pointer">
+      <button class="menu-toggler flex flex-row flex-nowrap items-start cursor-pointer">
         <span class="mr-4 align-top leading-3">
           <span class="menu">m</span>
           <span class="menu">e</span>
@@ -55,7 +55,8 @@
       </button>
     </navbar>
 
-    <header class="relative w-full h-screen mt-50 flex flex-col items-center gap-1">
+    <!-- HEADER -->
+    <header id="home" class="relative w-full h-screen pt-50 flex flex-col items-center gap-1">
       <div class="relative w-308px h-270px mx-auto">
         <svg
           style="opacity: 0; transform: translateY(-100%)"
@@ -117,12 +118,13 @@
           <rect class="rect-right" x="221" width="87" height="269" fill="white" />
         </svg>
       </div>
-      <h1 class="brand logo text-8xl font-thin opacity-0" style="font-size: 101px">MARDI8</h1>
-      <h2 class="brand slogan s_h3 opacity-0">Producteur d’expériences numériques</h2>
+      <h1 class="brand logo-heading text-8xl font-thin opacity-0" style="font-size: 101px">MARDI8</h1>
+      <h2 class="brand logo-slogan s_h3 opacity-0">Producteur d’expériences numériques</h2>
     </header>
 
     <main class="container mx-auto px-4 lg:max-w-1024px">
-      <section class="w-full relative">
+      <!-- SHOWCASE -->
+      <section id="showcase" class="w-full relative">
         <h2 class="sr-only">Showcase</h2>
 
         <video
@@ -143,8 +145,9 @@
         ></video>
       </section>
 
-      <section>
-        <h2 class="sr-only">A propos</h2>
+      <!-- ABOUT -->
+      <section id="about">
+        <h2 class="sr-only">À propos</h2>
         <div>
           <!-- <img class="float-left min-w-220px p-5 pb-0" alt="mardi8" src="/public/mardi8.svg" width="40" height="60" /> -->
           <p class="s_h1 font-thin">
@@ -163,7 +166,8 @@
         </div>
       </section>
 
-      <section class="flex flex-row justify-center lg:justify-between flex-wrap">
+      <!-- SERVICES -->
+      <section id="services" class="flex flex-row justify-center lg:justify-between flex-wrap">
         <h2 class="sr-only">Services</h2>
 
         <div class="mb-25 lg:w-[30%] lg:mb-0 w-[60%] text-center">
@@ -204,16 +208,30 @@
         </div>
       </section>
 
-      <section class="w-full text-center">
+      <!-- CONTACT -->
+      <section id="contact" class="w-full text-center">
         <h3 class="sr-only">Contact</h3>
         <p class="s_h1 font-thin">contact@mardi8.com</p>
       </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="bg-dark-700 w-full flex flex-row justify-between items-start p-4">footer</footer>
 
-    <!-- menu -->
-    <div tabindex="0" id="menu" class="fixed top-0 right-0 w-full h-screen bg-dark-900/75 hidden z-10"></div>
+    <!-- MENU -->
+    <div
+      tabindex="0"
+      id="menu"
+      class="fixed top-0 right-0 w-full h-screen bg-dark-900 hidden z-10 grid place-items-center"
+    >
+      <div class="flex flex-col justify-start items-start ml-auto mr-[20%]">
+        <a class="menu-link s_h1" href="#home"> HOME </a>
+        <a class="menu-link s_h1" href="#about"> ABOUT </a>
+        <a class="menu-link s_h1" href="#showcase"> SHOWCASE </a>
+        <a class="menu-link s_h1" href="#services"> SERVICES </a>
+        <a class="menu-link s_h1" href="#contact"> CONTACT </a>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

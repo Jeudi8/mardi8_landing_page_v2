@@ -12,8 +12,8 @@ const buildAnimations = (baseClass: string): GSAPTimeline => {
     .to(`${baseClass}.rect-top`, { translateY: '0' }, '<50%')
     .to(`${baseClass}.rect-left`, { translateY: '0', translateX: '0', rotate: 0 }, '<20%')
     .to(`${baseClass}.rect-right`, { translateY: '0', translateX: '0', rotate: 0 }, '<20%')
-    .to(`${baseClass}.logo`, {}, '<50%')
-    .to(`${baseClass}.slogan`, {}, '<10%');
+    .to(`${baseClass}.logo-heading`, {}, '<50%')
+    .to(`${baseClass}.logo-slogan`, {}, '<10%');
 
   return timeline;
 };

@@ -10,7 +10,7 @@
 :root {
   --font-size: 15px;
   --dark: black;
-  --gray: #bbbab2;
+  --gray: #d4d3d0;
   --dark-opacity: rgba(0, 0, 0, 0.7);
 
   font-family: 'Barlow', Arial, Helvetica, sans-serif;
@@ -62,7 +62,8 @@ body {
 }
 
 section {
-  margin: 30rem 0;
+  padding-top: 10rem;
+  margin-bottom: 30rem;
   /* outline: solid 1px yellow; */
   /* opacity: 0; */
   opacity: 0.3;
