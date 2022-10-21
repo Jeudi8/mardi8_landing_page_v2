@@ -24,10 +24,10 @@ const hide = () => {
 const tl = gsap
   .timeline({
     paused: true,
-    defaults: { duration: 2, opacity: 1, ease: Power4.easeOut },
+    defaults: { opacity: 1, ease: Power4.easeOut },
   })
-  .to(MENU, {})
-  .to(MENU_LINK, { stagger: 0.1 }, '<50%');
+  .to(MENU, { duration: 2 })
+  .to(MENU_LINK, { duration: 1, stagger: 0.1, ease: 'linear' }, '<50%');
 
 tl.eventCallback('onReverseComplete', hide);
 tl.eventCallback('onStart', show);
