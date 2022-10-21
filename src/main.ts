@@ -1,8 +1,9 @@
 import 'virtual:windi.css';
 import './style.css';
-import * as videoBlur from './videoBlur';
-import * as sections from './sections';
-import header from './header';
+import * as videoBlur from './scripts/videoBlur';
+import * as sections from './scripts/sections';
+import header from './scripts/header';
+import menu from './scripts/menu';
 
 document.querySelectorAll('section').forEach((el) => {
   sections.observer.observe(el);
