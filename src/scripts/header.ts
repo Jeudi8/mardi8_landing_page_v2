@@ -1,6 +1,6 @@
+// https://css-tricks.com/tips-for-writing-animation-code-efficiently/
 import gsap, { Power4 } from 'gsap';
 
-// https://css-tricks.com/tips-for-writing-animation-code-efficiently/
 const buildAnimations = (baseClass: string): GSAPTimeline => {
   const timeline = gsap.timeline({
     paused: true,
