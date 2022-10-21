@@ -1,74 +1,23 @@
 import gsap, { Power4 } from 'gsap';
 
-const timeline = gsap.timeline({
+let timeline = gsap.timeline({
   paused: true,
-  //   repeat: 1,
+  defaults: { duration: 2, opacity: 1, ease: Power4.easeOut },
 });
 
 timeline
+  .to('.rect-bottom', { translateY: '0' })
+  .to('.rect-bottom', { scale: 1 })
+  .to('.rect-top', { translateY: '0' }, '<50%')
+  .to('.rect-left', { translateY: '0', translateX: '0', rotate: 0 }, '<20%')
+  .to('.rect-right', { translateY: '0', translateX: '0', rotate: 0 }, '<20%')
+  .to('.brand', {}, '<50%')
+  .to('.brand-sub', {}, '<10%');
 
-  .to('.rect-bottom', {
-    translateY: '0',
-    opacity: 1,
-    duration: 2,
-    ease: Power4.easeOut,
-  })
-  .to('.rect-bottom', {
-    scale: 1,
-    duration: 1,
-    ease: Power4.easeOut,
-  })
-  .to(
-    '.rect-top',
-    {
-      translateY: '0',
-      opacity: 1,
-      duration: 2,
-      ease: Power4.easeOut,
-    },
-    '<20%'
-  )
-  .to(
-    '.rect-left',
-    {
-      translateY: '0',
-      translateX: '0',
-      rotate: 0,
-      opacity: 1,
-      duration: 2,
-      ease: Power4.easeOut,
-    },
-    '<20%'
-  )
-  .to(
-    '.rect-right',
-    {
-      translateY: '0',
-      translateX: '0',
-      rotate: 0,
-      opacity: 1,
-      duration: 2,
-      ease: Power4.easeOut,
-    },
-    '<20%'
-  )
-  .to(
-    '.brand',
-    {
-      opacity: 1,
-      duration: 2,
-      ease: Power4.easeOut,
-    },
-    '<50%'
-  )
-  .to(
-    '.brand-sub',
-    {
-      opacity: 1,
-      duration: 2,
-      ease: Power4.easeOut,
-    },
-    '<10%'
-  );
+export const attach = () => {
+  timeline.play();
 
-export default { timeline };
+  timeline.eventCallback('onComplete', () => {
+    timeline.kill();
+  });
+};

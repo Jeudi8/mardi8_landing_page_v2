@@ -1,3 +1,5 @@
+import selector from './selector';
+
 const WIDTH = 640;
 const HEIGHT = 360;
 let time = Date.now();
@@ -15,18 +17,18 @@ const mapRange = (current: number, in_min: number, in_max: number, out_min: numb
   return mapped;
 };
 
-export const seek = (e: Event) => {
+export const seeked = (e: Event) => {
   const target = e.target as HTMLVideoElement;
   videoBlur.currentTime = target.currentTime;
 };
 
 export const play = (e: Event) => {
-  seek(e);
+  seeked(e);
   videoBlur.play();
 };
 
 export const pause = (e: Event) => {
-  seek(e);
+  seeked(e);
   videoBlur.pause();
 };
 
@@ -52,6 +54,19 @@ export const timeupdate = (e: Event) => {
 
   videoBlur.style.transitionDuration = `${delta}ms`;
   videoBlur.style.opacity = `${Math.max(0, mapRange(sumReverse, 0, 1, 0.3, 1))}`;
+};
+
+// const video = document.getElementById('video-origin') as HTMLVideoElement;
+// video.addEventListener('play', videoBlur.play);
+// video.addEventListener('pause', videoBlur.pause);
+// video.addEventListener('seeked', videoBlur.seek);
+// video.addEventListener('timeupdate', videoBlur.timeupdate);
+// window.addEventListener('resize', videoBlur.resize);
+export const attach = (id: string) => {
+  resize();
+  window.addEventListener('resize', resize);
+
+  selector(id, { play, pause, seeked, timeupdate });
 };
 
 // const render = (fn: (delta: number) => void) => {

@@ -1,3 +1,5 @@
+import selector from './selector';
+
 const callback: IntersectionObserverCallback = (entries: IntersectionObserverEntry[]) => {
   entries.forEach((entry) => {
     const el = entry.target as HTMLElement;
@@ -20,8 +22,16 @@ const callback: IntersectionObserverCallback = (entries: IntersectionObserverEnt
   });
 };
 
-export const observer = new IntersectionObserver(callback, {
+const observer = new IntersectionObserver(callback, {
   root: null,
   rootMargin: '0px',
   threshold: 0.3,
 });
+
+export const attach = (s: string) => {
+  const sections = selector(s);
+
+  sections.forEach((el) => {
+    observer.observe(el);
+  });
+};
