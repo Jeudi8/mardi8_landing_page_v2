@@ -1,20 +1,25 @@
 import gsap, { Power4 } from 'gsap';
 
-let timeline = gsap.timeline({
-  paused: true,
-  defaults: { duration: 2, opacity: 1, ease: Power4.easeOut },
-});
+// https://css-tricks.com/tips-for-writing-animation-code-efficiently/
+const buildAnimations = (baseClass: string): GSAPTimeline => {
+  const timeline = gsap.timeline({
+    paused: true,
+    defaults: { duration: 2, opacity: 1, ease: Power4.easeOut },
+  });
+  timeline
+    .to(`${baseClass}.rect-bottom`, { translateY: '0' })
+    .to(`${baseClass}.rect-bottom`, { scale: 1 })
+    .to(`${baseClass}.rect-top`, { translateY: '0' }, '<50%')
+    .to(`${baseClass}.rect-left`, { translateY: '0', translateX: '0', rotate: 0 }, '<20%')
+    .to(`${baseClass}.rect-right`, { translateY: '0', translateX: '0', rotate: 0 }, '<20%')
+    .to(`${baseClass}.logo`, {}, '<50%')
+    .to(`${baseClass}.slogan`, {}, '<10%');
 
-timeline
-  .to('.rect-bottom', { translateY: '0' })
-  .to('.rect-bottom', { scale: 1 })
-  .to('.rect-top', { translateY: '0' }, '<50%')
-  .to('.rect-left', { translateY: '0', translateX: '0', rotate: 0 }, '<20%')
-  .to('.rect-right', { translateY: '0', translateX: '0', rotate: 0 }, '<20%')
-  .to('.brand', {}, '<50%')
-  .to('.brand-sub', {}, '<10%');
+  return timeline;
+};
 
-export const attach = () => {
+export const attach = (baseClass: string) => {
+  const timeline = buildAnimations(baseClass);
   timeline.play();
 
   timeline.eventCallback('onComplete', () => {

@@ -5,7 +5,7 @@ import * as sections from './scripts/sections';
 import * as header from './scripts/header';
 import * as menu from './scripts/menu';
 
-header.attach();
+header.attach('.brand');
 menu.attach('#menu-btn');
 video.attach('#video-origin');
 sections.attach('section');
